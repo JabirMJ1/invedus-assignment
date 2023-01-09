@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .navbar {
+        @apply relative w-full flex flex-wrap items-center py-3 bg-gray-900 text-gray-200 shadow-lg;
+        .nav-item {
+            .nav-link {
+                @apply text-gray-400;
+                &.active {
+                    @apply text-white;
+                }
+            }
+        }
+    }
+}

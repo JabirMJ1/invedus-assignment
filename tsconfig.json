@@ -25,6 +25,9 @@
       "@constants/*": [
         "constants/*"
       ],
+      "@type/*": [
+        "type/*"
+      ],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
