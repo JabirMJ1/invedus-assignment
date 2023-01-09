@@ -1,3 +1,4 @@
+import ContactForm from "@components/Form";
 import Navbar from "@components/Navbar";
 import Head from "next/head";
 
@@ -15,8 +16,8 @@ export default function AddContact() {
         </header>
         <main>
             <div className="min-w-screen min-h-screen">
-                <section className="max-w-7xl m-auto">
-                    Add Contact
+                <section className="max-w-7xl m-auto p-5">
+                    <ContactForm/>
                 </section>
             </div>
         </main>
