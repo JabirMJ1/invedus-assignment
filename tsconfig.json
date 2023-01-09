@@ -13,7 +13,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "./", /* Base directory to resolve non-absolute module names. */// "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "paths": {
+      "@components/*": [
+        "components/*"
+      ],
+      "@libs/*": [
+        "libs/*"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ],
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
