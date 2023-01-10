@@ -17,18 +17,18 @@ export default function AddContact() {
         e.preventDefault()
         setLoading(true)
 
-        const form = e.target
+        const form = e.target as HTMLFormElement
         const id = uuid()
         const image = form.profile.files[0]
 
         // retrieve data from form
         let data = {
             id,
-            name: (form.name).value,
-            phone: form.phone.value,
-            type: form.type.value,
+            name: (form.name as any).value,
+            phone: (form.phone as any).value,
+            type: (form.type as any).value,
             profile: `${id}_${image.name}`,
-            is_whatsapp: form.is_whatsapp.checked,
+            is_whatsapp: (form.is_whatsapp as any).checked,
         }
 
 
