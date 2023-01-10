@@ -9,21 +9,16 @@ import { useEffect } from 'react';
 import { isLocalStorageEnabled, listItems } from '@libs/localStorage';
 import NoDependencies from '@components/NoDependencies';
 import { IData } from '@type/TTable';
+import { ToastContainer, toast } from 'react-toastify';
 
 const inter = Inter({ subsets: ['latin'] })
 
-const _contacts_: IData[] = [
-  {name: "Jabir MJ", type: 1, phone: "7907523150", is_whatsapp: true, profile: "profile"},
-  {name: "Jabir MJ", type: 1, phone: "7907523150", is_whatsapp: true, profile: "profile"},
-  {name: "Jabir MJ", type: 1, phone: "7907523150", is_whatsapp: true, profile: "profile"},
-  {name: "Jabir MJ", type: 1, phone: "7907523150", is_whatsapp: true, profile: "profile"},
-]
 
 /**
  * Display all contacts in table
  */
 export default function Contacts() {
-  const [contacts, setContacts] = useState([]) // contacts
+  const [contacts, setContacts] = useState<{ [x: string]: string | number | boolean; }[]>([]) // contacts
   const [dependencies, setDependencies] = useState(false) // check if dependencies are satisfied
 
   // Load initial data
@@ -41,6 +36,14 @@ export default function Contacts() {
     initialLoading()
   }, [])
 
+  const removeItem = (index: number) => {
+    setContacts(prevState => {
+      let newState = [...prevState]
+      newState.splice(index, 1)
+      return newState
+    })
+  }
+  
   if(!dependencies) return (<NoDependencies/>)
 
   return (
@@ -59,7 +62,8 @@ export default function Contacts() {
             <section className="max-w-7xl m-auto">
               <Table
                 headers = {TABLE_HEADERS}
-                data = {_contacts_}
+                data = {contacts}
+                removeItem = {removeItem}
               />
             </section>
           </div>

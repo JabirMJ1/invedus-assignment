@@ -10,6 +10,14 @@
       "StackName": "amplify-invedustest-dev-202527",
       "StackId": "arn:aws:cloudformation:ap-south-1:038156576566:stack/amplify-invedustest-dev-202527/a1f4daa0-902d-11ed-8728-0669b720ed0e",
       "AmplifyAppId": "d2unzq9somkge0"
+    },
+    "categories": {
+      "auth": {
+        "invedustestc0c8c274": {}
+      },
+      "storage": {
+        "s3f4963f4d": {}
+      }
     }
   }
 }
